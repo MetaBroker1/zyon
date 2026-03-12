@@ -14,6 +14,9 @@
     --color-green: #00C853;
     --color-green-light: #69F0AE;
     --color-green-dark: #00A844;
+    --color-telegram: #2AABEE;
+    --color-telegram-light: #55C4F0;
+    --color-telegram-dark: #1A8FCC;
     --color-white: #FFFFFF;
     --color-gray: #9a9a9a;
     --color-gray-light: #c4c4c4;
@@ -25,6 +28,7 @@
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --max-width: 1080px;
     --glow-green: 0 0 30px rgba(0, 200, 83, 0.3);
+    --glow-telegram: 0 0 30px rgba(42, 171, 238, 0.3);
 }
 
 /* --- RESET --- */
@@ -134,42 +138,6 @@ section {
     opacity: 0.9;
 }
 
-.hero-video-wrapper {
-    width: 100%;
-    max-width: 400px;
-    margin-bottom: 32px;
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    background: var(--color-surface);
-    position: relative;
-    aspect-ratio: 9 / 16;
-}
-
-.hero-video-wrapper video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero-video-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-gray);
-    font-size: 14px;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.hero-video-placeholder svg {
-    width: 48px;
-    height: 48px;
-    fill: var(--color-green);
-    opacity: 0.5;
-}
-
 .hero h1 {
     font-size: 28px;
     font-weight: 800;
@@ -200,8 +168,8 @@ section {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    background: var(--color-green);
-    color: #000;
+    background: var(--color-telegram);
+    color: #fff;
     font-family: var(--font-family);
     font-size: 16px;
     font-weight: 700;
@@ -212,16 +180,16 @@ section {
     transition: var(--transition);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-shadow: var(--glow-green);
+    box-shadow: var(--glow-telegram);
     width: 100%;
     max-width: 420px;
     min-height: 54px;
 }
 
 .cta-button:hover {
-    background: var(--color-green-light);
+    background: var(--color-telegram-light);
     transform: translateY(-2px);
-    box-shadow: 0 0 40px rgba(0, 200, 83, 0.4);
+    box-shadow: 0 0 40px rgba(42, 171, 238, 0.4);
 }
 
 .cta-button:active {
@@ -239,6 +207,34 @@ section {
     font-size: 13px;
     color: var(--color-gray);
     margin-top: 12px;
+}
+
+/* --- TODAY COUNTER --- */
+.today-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-green);
+    margin-top: 16px;
+    padding: 8px 20px;
+    background: rgba(0, 200, 83, 0.08);
+    border: 1px solid rgba(0, 200, 83, 0.2);
+    border-radius: 50px;
+}
+
+.today-counter-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--color-green);
+    border-radius: 50%;
+    animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0, 200, 83, 0.5); }
+    50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(0, 200, 83, 0); }
 }
 
 /* ===================================
@@ -615,16 +611,6 @@ section {
     border-top: 1px solid var(--color-border);
 }
 
-.footer a {
-    color: var(--color-gray);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-}
-
-.footer a:hover {
-    color: var(--color-gray-light);
-}
-
 /* ===================================
    SCROLL ANIMATIONS
    =================================== */
@@ -736,24 +722,6 @@ section {
    RESPONSIVE — DESKTOP
    =================================== */
 @media (min-width: 1024px) {
-    .hero .container {
-        flex-direction: row;
-        text-align: left;
-        align-items: center;
-        gap: 48px;
-    }
-
-    .hero-content {
-        flex: 1;
-        order: 1;
-    }
-
-    .hero-video-wrapper {
-        order: 2;
-        margin-bottom: 0;
-        max-width: 320px;
-    }
-
     .hero h1 {
         font-size: 48px;
     }
