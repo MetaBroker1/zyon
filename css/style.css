@@ -510,90 +510,76 @@ section {
 }
 
 /* ===================================
-   SEÇÃO COMPARATIVA (nova)
+   SEÇÃO COMPARATIVA
    =================================== */
 .comparison {
     background: var(--color-bg-alt);
 }
 
-.comparison-table-wrapper {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    margin: 0 -20px;
-    padding: 0 20px;
+.comparison-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-.comparison-table {
-    width: 100%;
-    min-width: 580px;
-    border-collapse: separate;
-    border-spacing: 0;
-    font-size: 14px;
-}
-
-.comparison-table th,
-.comparison-table td {
-    padding: 14px 16px;
-    text-align: left;
-    border-bottom: 1px solid var(--color-border);
-    vertical-align: middle;
-}
-
-.comparison-table thead th {
+.comparison-card {
     background: var(--color-surface);
-    font-size: 13px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+}
+
+.comparison-card-title {
+    font-size: 15px;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--color-gray-light);
-    white-space: nowrap;
-}
-
-.comparison-table thead th:first-child {
-    border-radius: var(--radius-sm) 0 0 0;
-}
-
-.comparison-table thead th:last-child {
-    border-radius: 0 var(--radius-sm) 0 0;
-}
-
-.comparison-mirror {
-    background: rgba(0, 200, 83, 0.08) !important;
-    color: var(--color-green) !important;
-    border-left: 2px solid var(--color-green);
-}
-
-.comparison-table tbody td {
-    background: var(--color-bg);
-}
-
-.comparison-label {
-    font-weight: 600;
     color: var(--color-white);
-    white-space: nowrap;
+    margin-bottom: 12px;
+    text-align: center;
 }
 
-.comparison-no {
+.comparison-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.comparison-option + .comparison-option {
+    margin-top: 6px;
+}
+
+.comparison-bad {
     color: var(--color-gray);
 }
 
-.comparison-yes {
+.comparison-good {
     color: var(--color-green);
     font-weight: 600;
-    background: rgba(0, 200, 83, 0.04) !important;
-    border-left: 2px solid var(--color-green);
+    background: rgba(0, 200, 83, 0.06);
+    border: 1px solid rgba(0, 200, 83, 0.15);
 }
 
-.comparison-table tbody tr:last-child td {
-    border-bottom: none;
+.comparison-tag {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--color-gray);
+    white-space: nowrap;
+    min-width: 90px;
+    text-align: center;
+    flex-shrink: 0;
 }
 
-.comparison-table tbody tr:last-child td:first-child {
-    border-radius: 0 0 0 var(--radius-sm);
-}
-
-.comparison-table tbody tr:last-child td:last-child {
-    border-radius: 0 0 var(--radius-sm) 0;
+.comparison-tag-green {
+    background: rgba(0, 200, 83, 0.12);
+    color: var(--color-green);
 }
 
 /* ===================================
@@ -862,13 +848,16 @@ section {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .comparison-table-wrapper {
-        margin: 0;
-        padding: 0;
+    .comparison-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
 
-    .comparison-table {
-        font-size: 15px;
+    .comparison-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 50%;
+        justify-self: center;
     }
 
     .cta-final-highlight {
@@ -904,13 +893,17 @@ section {
         font-size: 36px;
     }
 
-    .comparison-table {
-        font-size: 16px;
+    .comparison-cards {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .comparison-table th,
-    .comparison-table td {
-        padding: 16px 20px;
+    .comparison-card:nth-child(4) {
+        grid-column: auto;
+    }
+
+    .comparison-card:last-child {
+        grid-column: auto;
+        max-width: none;
     }
 }
 
