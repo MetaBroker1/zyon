@@ -154,12 +154,42 @@ section {
     font-size: 16px;
     color: var(--color-gray-light);
     line-height: 1.6;
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     max-width: 540px;
 }
 
 .hero-sub strong {
     color: var(--color-white);
+}
+
+/* --- HERO IMAGE --- */
+.hero-image-wrapper {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 28px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 2px solid var(--color-border);
+    background: var(--color-surface);
+    aspect-ratio: 3 / 4;
+}
+
+.hero-image-wrapper.hero-image-fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gray);
+    font-size: 14px;
+}
+
+.hero-image-wrapper.hero-image-fallback::after {
+    content: 'Foto do Bryan';
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* --- CTA BUTTON --- */
@@ -203,10 +233,22 @@ section {
     flex-shrink: 0;
 }
 
+.cta-button-large {
+    font-size: 17px;
+    padding: 18px 36px;
+    min-height: 58px;
+    max-width: 460px;
+}
+
 .cta-note {
     font-size: 13px;
     color: var(--color-gray);
     margin-top: 12px;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 40px;
 }
 
 /* --- TODAY COUNTER --- */
@@ -217,7 +259,7 @@ section {
     font-size: 14px;
     font-weight: 600;
     color: var(--color-green);
-    margin-top: 16px;
+    margin-bottom: 16px;
     padding: 8px 20px;
     background: rgba(0, 200, 83, 0.08);
     border: 1px solid rgba(0, 200, 83, 0.2);
@@ -273,10 +315,70 @@ section {
 }
 
 /* ===================================
-   O PROBLEMA
+   QUEM É O BRYAN
+   =================================== */
+.about {
+    background: var(--color-bg);
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+}
+
+.about-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    box-shadow: 0 0 40px rgba(0, 200, 83, 0.08);
+    flex-shrink: 0;
+}
+
+.about-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-photo-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-gray);
+    font-size: 13px;
+}
+
+.about-text p {
+    font-size: 16px;
+    color: var(--color-gray-light);
+    line-height: 1.7;
+    margin-bottom: 16px;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+
+.about-text strong {
+    color: var(--color-white);
+}
+
+.about .cta-container {
+    margin-top: 32px;
+}
+
+/* ===================================
+   A REALIDADE (O PROBLEMA)
    =================================== */
 .problem {
-    background: var(--color-bg);
+    background: var(--color-bg-alt);
 }
 
 .problem-cards {
@@ -343,7 +445,7 @@ section {
    MÉTODO ESPELHO
    =================================== */
 .method {
-    background: var(--color-bg-alt);
+    background: var(--color-bg);
 }
 
 .method .section-title .highlight {
@@ -408,113 +510,90 @@ section {
 }
 
 /* ===================================
-   QUEM É O BRYAN
+   SEÇÃO COMPARATIVA (nova)
    =================================== */
-.about {
-    background: var(--color-bg);
-}
-
-.about-content {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    align-items: center;
-}
-
-.about-photo {
-    width: 200px;
-    height: 200px;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    background: var(--color-surface);
-    border: 2px solid var(--color-border);
-    box-shadow: 0 0 40px rgba(0, 200, 83, 0.08);
-    flex-shrink: 0;
-}
-
-.about-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.about-photo-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-gray);
-    font-size: 13px;
-}
-
-.about-text p {
-    font-size: 16px;
-    color: var(--color-gray-light);
-    line-height: 1.7;
-    margin-bottom: 16px;
-}
-
-.about-text p:last-child {
-    margin-bottom: 0;
-}
-
-.about-text strong {
-    color: var(--color-white);
-}
-
-/* ===================================
-   O QUE ENCONTRA NO TELEGRAM
-   =================================== */
-.telegram-features {
+.comparison {
     background: var(--color-bg-alt);
 }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
+.comparison-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -20px;
+    padding: 0 20px;
 }
 
-.feature-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: 24px;
-    transition: var(--transition);
-}
-
-.feature-card:hover {
-    border-color: rgba(0, 200, 83, 0.4);
-}
-
-.feature-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(0, 200, 83, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 16px;
-}
-
-.feature-icon svg {
-    width: 22px;
-    height: 22px;
-    fill: var(--color-green);
-}
-
-.feature-card h3 {
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-
-.feature-card p {
+.comparison-table {
+    width: 100%;
+    min-width: 580px;
+    border-collapse: separate;
+    border-spacing: 0;
     font-size: 14px;
+}
+
+.comparison-table th,
+.comparison-table td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: middle;
+}
+
+.comparison-table thead th {
+    background: var(--color-surface);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     color: var(--color-gray-light);
-    line-height: 1.5;
+    white-space: nowrap;
+}
+
+.comparison-table thead th:first-child {
+    border-radius: var(--radius-sm) 0 0 0;
+}
+
+.comparison-table thead th:last-child {
+    border-radius: 0 var(--radius-sm) 0 0;
+}
+
+.comparison-mirror {
+    background: rgba(0, 200, 83, 0.08) !important;
+    color: var(--color-green) !important;
+    border-left: 2px solid var(--color-green);
+}
+
+.comparison-table tbody td {
+    background: var(--color-bg);
+}
+
+.comparison-label {
+    font-weight: 600;
+    color: var(--color-white);
+    white-space: nowrap;
+}
+
+.comparison-no {
+    color: var(--color-gray);
+}
+
+.comparison-yes {
+    color: var(--color-green);
+    font-weight: 600;
+    background: rgba(0, 200, 83, 0.04) !important;
+    border-left: 2px solid var(--color-green);
+}
+
+.comparison-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.comparison-table tbody tr:last-child td:first-child {
+    border-radius: 0 0 0 var(--radius-sm);
+}
+
+.comparison-table tbody tr:last-child td:last-child {
+    border-radius: 0 0 var(--radius-sm) 0;
 }
 
 /* ===================================
@@ -553,11 +632,71 @@ section {
     text-align: center;
 }
 
+.social-proof .cta-container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+/* ===================================
+   ANTI-OBJEÇÕES (nova)
+   =================================== */
+.objections {
+    background: var(--color-bg-alt);
+}
+
+.objections-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 640px;
+    margin: 32px auto 0;
+}
+
+.objection-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+.objection-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 50%;
+    background: rgba(0, 200, 83, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.objection-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: var(--color-green);
+}
+
+.objection-question {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 4px;
+}
+
+.objection-answer {
+    font-size: 14px;
+    color: var(--color-gray-light);
+    line-height: 1.5;
+}
+
 /* ===================================
    CTA FINAL
    =================================== */
 .cta-final {
-    background: var(--color-bg-alt);
+    background: var(--color-bg);
     border-top: 2px solid var(--color-green);
     text-align: center;
 }
@@ -575,7 +714,7 @@ section {
 }
 
 .cta-final-highlight {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     color: var(--color-white);
     margin-bottom: 32px;
@@ -585,6 +724,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 0;
 }
 
 /* --- DISCLAIMER --- */
@@ -642,11 +782,12 @@ section {
         border-left: 1px solid var(--color-border);
     }
 
-    .features-grid {
+    .screenshots-grid {
         grid-template-columns: 1fr 1fr;
     }
 
-    .screenshots-grid {
+    .objections-grid {
+        display: grid;
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -666,6 +807,10 @@ section {
 
     .hero-sub {
         font-size: 18px;
+    }
+
+    .hero-image-wrapper {
+        max-width: 280px;
     }
 
     .section-title {
@@ -716,6 +861,19 @@ section {
     .screenshots-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .comparison-table-wrapper {
+        margin: 0;
+        padding: 0;
+    }
+
+    .comparison-table {
+        font-size: 15px;
+    }
+
+    .cta-final-highlight {
+        font-size: 26px;
+    }
 }
 
 /* ===================================
@@ -734,12 +892,25 @@ section {
         width: auto;
     }
 
+    .cta-button-large {
+        width: auto;
+    }
+
     .section-title {
         font-size: 36px;
     }
 
     .stat-number {
         font-size: 36px;
+    }
+
+    .comparison-table {
+        font-size: 16px;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+        padding: 16px 20px;
     }
 }
 

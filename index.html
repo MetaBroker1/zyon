@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Método Espelho: Copie as Operações de um Trader Profissional ao Vivo | Zyon Capital</title>
-    <meta name="description" content="Mais de 13.000 pessoas já usam o Método Espelho para copiar as operações do Bryan em tempo real pelo Telegram. Acesso 100% gratuito. Entre agora.">
+    <title>Método Espelho: Copie Operações ao Vivo e Ganhe Dinheiro Extra pelo Celular | Zyon Capital</title>
+    <meta name="description" content="Mais de 13 mil pessoas copiam as operações do Bryan ao vivo pelo Telegram e ganham dinheiro extra sem entender nada de trading. 100% gratuito.">
     <meta name="robots" content="index, follow">
     <link rel="icon" href="images/logo.png" type="image/png">
 
@@ -12,6 +12,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Preload hero image -->
+    <link rel="preload" as="image" href="images/bryan-hero.webp">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -36,12 +39,15 @@
         <div class="container">
             <div class="hero-content">
                 <img src="images/logo.png" alt="Zyon Capital" class="hero-logo">
-                <span class="badge">ACESSO GRATUITO</span>
-                <h1>13.198 Pessoas Estão Lucrando no Mercado Financeiro <span class="highlight">Sem Entender Nada de Trading</span></h1>
-                <p class="hero-sub">Elas usam o <strong>Método Espelho</strong>: acompanham um trader profissional ao vivo pelo Telegram e copiam cada operação em tempo real. Sem estudo, sem curso, sem complicação.</p>
+                <span class="badge">100% GRATUITO</span>
+                <h1>Ganhe Dinheiro Extra <span class="highlight">Copiando</span> um Trader ao Vivo pelo Celular</h1>
+                <p class="hero-sub">Mais de <strong>13 mil pessoas</strong> acompanham o Bryan operando ao vivo no Telegram e copiam cada entrada no mesmo segundo. Sem precisar estudar, sem curso, sem complicação.</p>
+                <div class="hero-image-wrapper">
+                    <img src="images/bryan-hero.webp" alt="Bryan, trader ao vivo da Zyon Capital" class="hero-image" fetchpriority="high" onerror="this.parentElement.classList.add('hero-image-fallback')">
+                </div>
                 <a href="https://t.me/+fpu9RPK1HRk1Y2Vh" class="cta-button">
                     <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/></svg>
-                    ENTRAR NO TELEGRAM GRATUITO
+                    ENTRAR AGORA NO TELEGRAM
                 </a>
                 <p class="cta-note">Você será redirecionado para o canal do Bryan no Telegram</p>
             </div>
@@ -54,11 +60,11 @@
             <div class="stats-grid">
                 <div class="stat-item">
                     <span class="stat-number" data-count="13198">0</span>
-                    <span class="stat-label">pessoas na comunidade</span>
+                    <span class="stat-label">pessoas no canal</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">AO VIVO</span>
-                    <span class="stat-label">todos os dias úteis</span>
+                    <span class="stat-label">de segunda a sexta</span>
                 </div>
                 <div class="stat-item">
                     <span class="stat-number">R$ 0</span>
@@ -68,18 +74,44 @@
         </div>
     </section>
 
-    <!-- ===== O PROBLEMA ===== -->
+    <!-- ===== QUEM É O BRYAN (movido para antes do método) ===== -->
+    <section class="about fade-in">
+        <div class="container">
+            <h2 class="section-title">Quem é o Bryan</h2>
+            <div class="about-content">
+                <div class="about-photo">
+                    <img src="images/bryan-bio.webp" alt="Bryan, 18 anos, trader ao vivo" loading="lazy" onerror="this.style.display='none'; this.parentElement.querySelector('.about-photo-placeholder').style.display='flex'">
+                    <div class="about-photo-placeholder" style="display:none">Foto do Bryan</div>
+                </div>
+                <div class="about-text">
+                    <p>Há pouco mais de um ano, o Bryan tinha 17 anos, morava com a mãe e não tinha um real no bolso.</p>
+                    <p>Começou com <strong>R$ 50</strong> emprestados. Sem faculdade, sem curso caro, sem ninguém pra ajudar. Só um celular e vontade de mudar de vida.</p>
+                    <p>Hoje, aos 18 anos, ele opera ao vivo todos os dias para mais de <strong>13 mil pessoas</strong> no Telegram. Não promete fórmula mágica. Mostra a tela, abre a operação e deixa o resultado falar.</p>
+                    <p>A diferença entre o Bryan e os "professores" que você vê por aí? <strong>Ele opera na sua frente. Tudo aberto. Tudo ao vivo.</strong> Quando acerta, você vê. Quando erra, você vê também.</p>
+                </div>
+            </div>
+            <div class="cta-container">
+                <a href="https://t.me/+fpu9RPK1HRk1Y2Vh" class="cta-button">
+                    <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/></svg>
+                    QUERO ACOMPANHAR O BRYAN AO VIVO
+                </a>
+                <p class="cta-note">Canal gratuito no Telegram</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== A REALIDADE (substituiu "O Problema") ===== -->
     <section class="problem fade-in">
         <div class="container">
-            <h2 class="section-title">93% dos Traders Perdem Dinheiro.<br>Você Sabe Por Quê?</h2>
+            <h2 class="section-title">Isso Parece com a Sua Vida?</h2>
             <div class="problem-cards">
                 <div class="problem-card">
                     <div class="problem-card-icon">
-                        <svg viewBox="0 0 24 24"><path d="M3 17h18v2H3v-2zm0-7h18v2H3v-2zm0-7h18v2H3V3zm16.59 14.41L18.17 16 16 18.17l-2.17-2.17L12.41 17.41l2.17 2.17-2.17 2.17L13.83 23 16 20.83l2.17 2.17 1.42-1.41-2.17-2.18 2.17-2.17z"/></svg>
+                        <svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
                     </div>
                     <div>
-                        <h3>Operam sem método</h3>
-                        <p>Entram no mercado financeiro sem estratégia, baseados em achismo. Cada operação é um tiro no escuro.</p>
+                        <h3>O salário não dá pra tudo</h3>
+                        <p>Você trabalha o mês inteiro e no final o dinheiro mal cobre as contas. Sobra pouco — ou não sobra nada.</p>
                     </div>
                 </div>
                 <div class="problem-card">
@@ -87,8 +119,8 @@
                         <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
                     </div>
                     <div>
-                        <h3>Estudam sozinhos por meses</h3>
-                        <p>Assistem dezenas de vídeos, leem livros e fazem cursos caros. Quando vão operar de verdade, percebem que a teoria não preparou para o mercado real.</p>
+                        <h3>Trabalho demais, resultado de menos</h3>
+                        <p>Você rala de segunda a segunda, ganha pouco e não vê saída. Já pensou em fazer algo diferente, mas não sabe por onde começar.</p>
                     </div>
                 </div>
                 <div class="problem-card">
@@ -96,12 +128,12 @@
                         <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
                     </div>
                     <div>
-                        <h3>Seguem "sinais" de quem não mostra a tela</h3>
-                        <p>Copiam alertas de pessoas que nunca aparecem operando ao vivo. Quando o sinal dá errado, não tem ninguém para responder.</p>
+                        <h3>Já tentou de tudo e nada deu certo</h3>
+                        <p>Renda extra, bico, revenda, aplicativo... você tentou, mas nada funcionou de verdade. E o pior: ninguém te ensina um caminho real.</p>
                     </div>
                 </div>
             </div>
-            <p class="problem-transition">Os 7% que realmente lucram no mercado financeiro fazem algo diferente. Eles não tentam adivinhar. Eles não passam meses estudando. Eles acompanham alguém que já sabe o caminho — e copiam <strong>cada movimento, em tempo real</strong>.</p>
+            <p class="problem-transition">E se existisse uma forma de ganhar dinheiro extra pelo celular, sem precisar estudar por meses, sem investir uma fortuna — só <strong>copiando o que alguém já faz ao vivo</strong>, na sua frente?</p>
         </div>
     </section>
 
@@ -109,27 +141,27 @@
     <section class="method fade-in">
         <div class="container">
             <h2 class="section-title">Como o <span class="highlight">Método Espelho</span> Funciona</h2>
-            <p class="section-subtitle">Três passos. Sem complicação. Pelo Telegram.</p>
+            <p class="section-subtitle">Três passos simples. Pelo celular. Pelo Telegram.</p>
             <div class="steps">
                 <div class="step">
                     <div class="step-number">01</div>
                     <div class="step-content">
                         <h3>Bryan abre a operação ao vivo</h3>
-                        <p>Todos os dias úteis, Bryan faz uma live no Telegram mostrando a tela dele em tempo real. Você vê o gráfico, a análise e o momento exato da entrada.</p>
+                        <p>De segunda a sexta, o Bryan faz uma live no Telegram mostrando a tela dele. Você vê tudo em tempo real — o gráfico, a análise e a hora exata da entrada.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">02</div>
                     <div class="step-content">
-                        <h3>Você espelha a operação</h3>
-                        <p>Quando Bryan entra, você entra junto. Mesma direção, mesmo momento. Sem precisar analisar nada — só seguir o que está na sua tela.</p>
+                        <h3>Você copia a mesma operação</h3>
+                        <p>Quando o Bryan entra, você entra junto. Mesma direção, mesmo momento. Não precisa analisar nada — é só fazer igual ao que está na tela.</p>
                     </div>
                 </div>
                 <div class="step">
                     <div class="step-number">03</div>
                     <div class="step-content">
-                        <h3>O resultado aparece na hora</h3>
-                        <p>Operações de curto prazo com resultado em minutos. Você acompanha o resultado junto com mais de 13.000 pessoas na comunidade.</p>
+                        <h3>O resultado sai em minutos</h3>
+                        <p>São operações rápidas. Em poucos minutos você já vê o resultado — junto com mais de 13 mil pessoas que estão acompanhando ao vivo.</p>
                     </div>
                 </div>
             </div>
@@ -143,59 +175,54 @@
         </div>
     </section>
 
-    <!-- ===== QUEM É O BRYAN ===== -->
-    <section class="about fade-in">
+    <!-- ===== SEÇÃO COMPARATIVA (nova) ===== -->
+    <section class="comparison fade-in">
         <div class="container">
-            <h2 class="section-title">Quem Está do Outro Lado da Tela</h2>
-            <div class="about-content">
-                <div class="about-photo">
-                    <!-- Substituir por foto real do Bryan (estilo UGC, natural) -->
-                    <div class="about-photo-placeholder">Foto do Bryan</div>
-                    <!-- <img src="images/bryan.webp" alt="Bryan - Trader da Zyon Capital" loading="lazy"> -->
-                </div>
-                <div class="about-text">
-                    <p>Há pouco mais de um ano, Bryan tinha 17 anos, estava desempregado e pedia dinheiro para a mãe.</p>
-                    <p>Começou no mercado financeiro com <strong>R$ 50</strong>. Sem faculdade, sem curso caro, sem conexões. Só com um celular e disciplina para estudar o que importa.</p>
-                    <p>Hoje, aos 18 anos, opera todos os dias ao vivo para uma comunidade com mais de <strong>13.000 pessoas</strong>. Não promete fórmula mágica. Mostra a tela, abre a operação e deixa o resultado falar.</p>
-                    <p>A diferença entre o Bryan e a maioria dos "professores" de trading que você encontra por aí? Ele opera na sua frente. <strong>Tudo aberto. Tudo ao vivo.</strong> Se acerta, você vê. Se erra, você também vê.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== O QUE ENCONTRA NO TELEGRAM ===== -->
-    <section class="telegram-features fade-in">
-        <div class="container">
-            <h2 class="section-title">O que Acontece Dentro do Canal</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><path d="M21 6h-7.59l3.29-3.29L16 2l-4 4-4-4-.71.71L10.59 6H3c-1.1 0-2 .89-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.11-.9-2-2-2zm0 14H3V8h18v12zM9 10v8l7-4z"/></svg>
-                    </div>
-                    <h3>Operações ao vivo todos os dias</h3>
-                    <p>Bryan opera em tempo real nos dias úteis. Você acompanha a tela dele e replica as entradas quando quiser.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
-                    </div>
-                    <h3>Sinais com horário e direção</h3>
-                    <p>Cada operação vem com o ativo, a direção e o momento exato. Sem adivinhação.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                    </div>
-                    <h3>Comunidade ativa com 13.000+ pessoas</h3>
-                    <p>Um grupo onde iniciantes e experientes trocam experiências, tiram dúvidas e acompanham resultados juntos.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h1.9c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10z"/></svg>
-                    </div>
-                    <h3>Acesso 100% gratuito</h3>
-                    <p>Sem mensalidade, sem taxa de entrada, sem pegadinha. O canal é aberto para qualquer pessoa que queira começar.</p>
-                </div>
+            <h2 class="section-title">Por que o Método Espelho é Diferente</h2>
+            <p class="section-subtitle">Compare e entenda por que mais de 13 mil pessoas escolheram esse caminho.</p>
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th class="comparison-aspect"></th>
+                            <th class="comparison-others">Tentar Sozinho</th>
+                            <th class="comparison-others">Sala de Sinais</th>
+                            <th class="comparison-mirror">Método Espelho</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="comparison-label">Você vê a operação?</td>
+                            <td class="comparison-no">Só você e o gráfico</td>
+                            <td class="comparison-no">Texto com atraso</td>
+                            <td class="comparison-yes">Tela ao vivo, mesmo segundo</td>
+                        </tr>
+                        <tr>
+                            <td class="comparison-label">Precisa estudar?</td>
+                            <td class="comparison-no">Meses de estudo</td>
+                            <td class="comparison-no">Precisa interpretar sinais</td>
+                            <td class="comparison-yes">Zero. Só copiar.</td>
+                        </tr>
+                        <tr>
+                            <td class="comparison-label">Transparência</td>
+                            <td class="comparison-no">Só você sabe se errou</td>
+                            <td class="comparison-no">Prints editáveis</td>
+                            <td class="comparison-yes">Câmera aberta, conta real</td>
+                        </tr>
+                        <tr>
+                            <td class="comparison-label">Frequência</td>
+                            <td class="comparison-no">Quando der vontade</td>
+                            <td class="comparison-no">1x por dia ou nenhuma</td>
+                            <td class="comparison-yes">Todo dia, de segunda a sexta</td>
+                        </tr>
+                        <tr>
+                            <td class="comparison-label">Custo</td>
+                            <td class="comparison-no">Cursos de R$ 500+</td>
+                            <td class="comparison-no">Mensalidade</td>
+                            <td class="comparison-yes">100% gratuito</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -228,25 +255,77 @@
                 </div>
                 <!-- Formato: <div class="screenshot-card"><img src="images/screenshots/01.webp" alt="Depoimento da comunidade" loading="lazy"></div> -->
             </div>
+            <div class="cta-container">
+                <a href="https://t.me/+fpu9RPK1HRk1Y2Vh" class="cta-button">
+                    <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/></svg>
+                    ENTRAR NO CANAL DO TELEGRAM
+                </a>
+                <p class="cta-note">Acesso imediato e gratuito</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ANTI-OBJEÇÕES (nova) ===== -->
+    <section class="objections fade-in">
+        <div class="container">
+            <h2 class="section-title">Ainda Tem Dúvida?</h2>
+            <div class="objections-grid">
+                <div class="objection-item">
+                    <div class="objection-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </div>
+                    <div>
+                        <p class="objection-question">Preciso entender de investimento?</p>
+                        <p class="objection-answer">Não. Você só copia o que o Bryan faz. Sem estudar nada.</p>
+                    </div>
+                </div>
+                <div class="objection-item">
+                    <div class="objection-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </div>
+                    <div>
+                        <p class="objection-question">É de graça mesmo?</p>
+                        <p class="objection-answer">Sim. 100% gratuito. Sem mensalidade, sem taxa, sem pegadinha.</p>
+                    </div>
+                </div>
+                <div class="objection-item">
+                    <div class="objection-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </div>
+                    <div>
+                        <p class="objection-question">Preciso do Telegram?</p>
+                        <p class="objection-answer">Sim. É um aplicativo gratuito que você baixa em 1 minuto na loja do celular.</p>
+                    </div>
+                </div>
+                <div class="objection-item">
+                    <div class="objection-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </div>
+                    <div>
+                        <p class="objection-question">Tem risco?</p>
+                        <p class="objection-answer">Sim. Como qualquer investimento. Mas você acompanha tudo ao vivo e decide se quer operar ou não.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- ===== CTA FINAL ===== -->
     <section class="cta-final fade-in">
         <div class="container">
-            <p class="cta-final-text">Mais de 13.000 pessoas já acompanham o Bryan ao vivo todos os dias pelo Telegram. Sem pagar nada. Sem precisar entender de gráfico. Só espelhando as operações e vendo o resultado em tempo real.</p>
-            <p class="cta-final-highlight">Você pode ser a próxima pessoa nesse grupo.</p>
+            <p class="cta-final-text">Enquanto você está lendo isso, o Bryan está se preparando para a próxima operação ao vivo. Mais de <strong>13 mil pessoas</strong> vão abrir o Telegram e acompanhar. Vão copiar a entrada, no mesmo segundo, sem precisar entender nada de gráfico.</p>
+            <p class="cta-final-highlight">Amanhã o Bryan opera de novo. Você vai estar lá?</p>
             <div class="cta-container">
-                <a href="https://t.me/+fpu9RPK1HRk1Y2Vh" class="cta-button">
+                <p class="today-counter"><span class="today-counter-dot"></span> <span id="today-count">0</span> pessoas entraram hoje</p>
+                <a href="https://t.me/+fpu9RPK1HRk1Y2Vh" class="cta-button cta-button-large">
                     <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.295-.6.295l.213-3.054 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.135-.954l11.566-4.458c.538-.196 1.006.128.832.941z"/></svg>
                     ENTRAR NO TELEGRAM GRATUITO
                 </a>
-                <p class="today-counter"><span class="today-counter-dot"></span> <span id="today-count">0</span> pessoas entraram hoje</p>
                 <p class="cta-note">Acesso imediato pelo Telegram</p>
             </div>
 
             <div class="disclaimer">
-                Aviso legal: Operações no mercado financeiro envolvem riscos. Resultados passados não garantem resultados futuros. Todo investimento está sujeito a perdas. Opere com responsabilidade e nunca invista mais do que pode perder. Este canal oferece conteúdo educacional e operações em tempo real, mas não constitui recomendação de investimento. A decisão de operar é de inteira responsabilidade do usuário.
+                Aviso legal: Operações no mercado financeiro envolvem riscos. Resultados passados não garantem resultados futuros. Todo investimento está sujeito a perdas. Opere com responsabilidade e nunca invista mais do que pode perder. Este canal oferece conteúdo educacional e operações em tempo real, mas não constitui recomendação ou assessoria de investimento. A decisão de operar é de inteira responsabilidade do usuário.
             </div>
         </div>
     </section>
