@@ -134,7 +134,7 @@ section {
 .hero-logo {
     height: 36px;
     width: auto;
-    margin-bottom: 32px;
+    margin: 0 auto 32px;
     opacity: 0.9;
 }
 
