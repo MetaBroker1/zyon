@@ -249,6 +249,18 @@ document.addEventListener('DOMContentLoaded', function() {
     getFacebookBrowserId();
     getFacebookClickId();
 
+    // Scroll CTA (não é tracking — só scroll suave)
+    var scrollCta = document.getElementById('scroll-cta');
+    if (scrollCta) {
+        scrollCta.addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = document.getElementById('problema');
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    }
+
     // Inicializar módulos
     initCTATracking();
     initScrollAnimations();

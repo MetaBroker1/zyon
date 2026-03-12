@@ -192,6 +192,38 @@ section {
     object-fit: cover;
 }
 
+/* --- SCROLL CTA (ghost button no hero) --- */
+.scroll-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--color-gray-light);
+    font-family: var(--font-family);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 28px;
+    border: 1px solid var(--color-border);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    background: transparent;
+}
+
+.scroll-cta:hover {
+    color: var(--color-green);
+    border-color: rgba(0, 200, 83, 0.4);
+    background: rgba(0, 200, 83, 0.05);
+}
+
+.scroll-cta svg {
+    transition: transform 0.3s ease;
+}
+
+.scroll-cta:hover svg {
+    transform: translateY(3px);
+}
+
 /* --- CTA BUTTON --- */
 .cta-button {
     display: inline-flex;
@@ -372,6 +404,19 @@ section {
 
 .about .cta-container {
     margin-top: 32px;
+}
+
+.about-transition {
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--color-gray-light);
+    text-align: center;
+    max-width: 600px;
+    margin: 40px auto 0;
+}
+
+.about-transition strong {
+    color: var(--color-green);
 }
 
 /* ===================================
