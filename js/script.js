@@ -111,12 +111,7 @@ function initCTATracking() {
 
             var redirectUrl = button.getAttribute('href');
 
-            // Facebook Pixel — Lead event
-            if (typeof fbq !== 'undefined') {
-                fbq('track', 'Lead', { content_name: EXPERT_ID });
-            }
-
-            // GTM dataLayer — para GTM capturar
+            // GTM dataLayer — Lead event (tag configurada no GTM)
             if (typeof dataLayer !== 'undefined') {
                 dataLayer.push({
                     event: 'generate_lead',
