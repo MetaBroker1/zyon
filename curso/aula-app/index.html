@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Usar o App de IA | Zyon Capital</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" href="../../images/logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../curso.css">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-N2JXDKZW');</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2JXDKZW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="curso-header">
+        <img src="../../images/logo.png" alt="Zyon Capital" class="logo">
+    </header>
+
+    <main class="curso-container">
+        <div class="curso-progress">
+            <div class="step active">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+        </div>
+
+        <h1 class="curso-titulo">Como Usar o App de IA</h1>
+        <p class="curso-subtitulo">Aprenda a configurar e usar o aplicativo para operar com inteligência artificial.</p>
+
+        <div class="video-wrapper">
+            <video id="videoAula" controls playsinline preload="metadata"
+                   poster="../../images/logo.png">
+                <source src="../aula-app-como-usar.mp4" type="video/mp4">
+                Seu navegador não suporta vídeo.
+            </video>
+        </div>
+
+        <div id="btnContainer" class="btn-container hidden">
+            <a href="https://t.me/+fpu9RPK1HRk1Y2Vh" class="btn-proximo btn-telegram" id="btnTelegram">
+                Entrar no Canal do Bryan
+            </a>
+        </div>
+
+        <p id="msgAssista" class="msg-assistir">Assista a aula para desbloquear o próximo passo.</p>
+    </main>
+
+    <footer class="curso-footer">
+        <p>Zyon Capital</p>
+    </footer>
+
+    <script>
+    (function() {
+        var video = document.getElementById('videoAula');
+        var btn = document.getElementById('btnContainer');
+        var msg = document.getElementById('msgAssista');
+        var tracked25 = false, tracked50 = false, tracked75 = false, trackedComplete = false;
+
+        video.addEventListener('play', function() {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                event: 'curso_aula_app_play',
+                aula: 'app',
+                titulo: 'Como Usar o App de IA'
+            });
+        }, { once: true });
+
+        video.addEventListener('timeupdate', function() {
+            if (!video.duration) return;
+            var pct = (video.currentTime / video.duration) * 100;
+
+            if (pct >= 25 && !tracked25) {
+                tracked25 = true;
+                window.dataLayer.push({ event: 'curso_aula_app_25pct' });
+            }
+            if (pct >= 50 && !tracked50) {
+                tracked50 = true;
+                window.dataLayer.push({ event: 'curso_aula_app_50pct' });
+            }
+            if (pct >= 75 && !tracked75) {
+                tracked75 = true;
+                window.dataLayer.push({ event: 'curso_aula_app_75pct' });
+                btn.classList.remove('hidden');
+                msg.style.display = 'none';
+            }
+        });
+
+        video.addEventListener('ended', function() {
+            if (!trackedComplete) {
+                trackedComplete = true;
+                window.dataLayer.push({ event: 'curso_aula_app_complete' });
+            }
+            btn.classList.remove('hidden');
+            msg.style.display = 'none';
+        });
+
+        document.getElementById('btnTelegram').addEventListener('click', function() {
+            window.dataLayer.push({ event: 'curso_aula_app_telegram' });
+        });
+    })();
+    </script>
+</body>
+</html>
