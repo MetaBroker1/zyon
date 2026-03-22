@@ -17,6 +17,126 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-N2JXDKZW');</script>
+
+    <style>
+        .aviso-topo {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: 16px 20px;
+            margin-bottom: 28px;
+            text-align: center;
+        }
+
+        .aviso-topo p {
+            color: var(--color-gray-light);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .aviso-topo .destaque {
+            color: var(--color-green);
+            font-weight: 600;
+        }
+
+        .btn-app {
+            display: block;
+            width: 100%;
+            padding: 18px 24px;
+            background: var(--color-green);
+            color: var(--color-white);
+            font-family: var(--font-family);
+            font-size: 17px;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            border-radius: var(--radius);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .btn-app:hover {
+            background: var(--color-green-dark);
+            transform: translateY(-2px);
+        }
+
+        /* Estado discreto (antes de assistir) */
+        .btn-app.discreto {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            color: var(--color-gray);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 14px 20px;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        .btn-app.discreto:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Estado ativo (após assistir) */
+        .btn-app.ativo {
+            pointer-events: auto;
+            animation: pulsar 2s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(0, 200, 83, 0.4);
+        }
+
+        .btn-app.ativo:hover {
+            animation: none;
+            box-shadow: 0 8px 32px rgba(0, 200, 83, 0.5);
+        }
+
+        @keyframes pulsar {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(0, 200, 83, 0.3);
+                transform: scale(1);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(0, 200, 83, 0.6);
+                transform: scale(1.02);
+            }
+        }
+
+        .btn-container-app {
+            margin-top: 32px;
+            margin-bottom: 16px;
+        }
+
+        .progresso-label {
+            text-align: center;
+            color: var(--color-gray);
+            font-size: 13px;
+            margin-top: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .progresso-label.concluido {
+            color: var(--color-green);
+            font-weight: 600;
+        }
+
+        .barra-progresso {
+            width: 100%;
+            height: 4px;
+            background: var(--color-surface);
+            border-radius: 2px;
+            margin-top: 12px;
+            overflow: hidden;
+        }
+
+        .barra-progresso-fill {
+            height: 100%;
+            background: var(--color-green);
+            border-radius: 2px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -28,14 +148,11 @@
     </header>
 
     <main class="curso-container">
-        <div class="curso-progress">
-            <div class="step active">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 6v6l4 2"/></svg>
-            </div>
-        </div>
-
         <h1 class="curso-titulo">Como Usar o App de IA</h1>
-        <p class="curso-subtitulo">Aprenda a configurar e usar o aplicativo para operar com inteligência artificial.</p>
+
+        <div class="aviso-topo">
+            <p>Assista a aula completa para <span class="destaque">liberar o acesso ao aplicativo</span></p>
+        </div>
 
         <div class="video-wrapper">
             <video id="videoAula" controls playsinline preload="metadata"
@@ -45,13 +162,16 @@
             </video>
         </div>
 
-        <div id="btnContainer" class="btn-container hidden">
-            <a href="https://t.me/+fpu9RPK1HRk1Y2Vh" class="btn-proximo btn-telegram" id="btnTelegram">
-                Entrar no Canal do Bryan
-            </a>
+        <div class="barra-progresso">
+            <div class="barra-progresso-fill" id="barraFill"></div>
         </div>
 
-        <p id="msgAssista" class="msg-assistir">Assista a aula para desbloquear o próximo passo.</p>
+        <div class="btn-container-app">
+            <a href="https://app.zyonai.app/minvest" class="btn-app discreto" id="btnApp">
+                Acessar o Aplicativo
+            </a>
+            <p class="progresso-label" id="progressoLabel">Assista a aula para desbloquear</p>
+        </div>
     </main>
 
     <footer class="curso-footer">
@@ -61,9 +181,11 @@
     <script>
     (function() {
         var video = document.getElementById('videoAula');
-        var btn = document.getElementById('btnContainer');
-        var msg = document.getElementById('msgAssista');
+        var btnApp = document.getElementById('btnApp');
+        var barraFill = document.getElementById('barraFill');
+        var progressoLabel = document.getElementById('progressoLabel');
         var tracked25 = false, tracked50 = false, tracked75 = false, trackedComplete = false;
+        var desbloqueado = false;
 
         video.addEventListener('play', function() {
             window.dataLayer = window.dataLayer || [];
@@ -78,19 +200,26 @@
             if (!video.duration) return;
             var pct = (video.currentTime / video.duration) * 100;
 
+            // Atualizar barra de progresso
+            barraFill.style.width = pct + '%';
+
             if (pct >= 25 && !tracked25) {
                 tracked25 = true;
                 window.dataLayer.push({ event: 'curso_aula_app_25pct' });
+                progressoLabel.textContent = '25% concluído...';
             }
             if (pct >= 50 && !tracked50) {
                 tracked50 = true;
                 window.dataLayer.push({ event: 'curso_aula_app_50pct' });
+                progressoLabel.textContent = '50% concluído...';
             }
             if (pct >= 75 && !tracked75) {
                 tracked75 = true;
                 window.dataLayer.push({ event: 'curso_aula_app_75pct' });
-                btn.classList.remove('hidden');
-                msg.style.display = 'none';
+                progressoLabel.textContent = '75% concluído — quase lá!';
+            }
+            if (pct >= 95 && !desbloqueado) {
+                desbloquear();
             }
         });
 
@@ -99,12 +228,31 @@
                 trackedComplete = true;
                 window.dataLayer.push({ event: 'curso_aula_app_complete' });
             }
-            btn.classList.remove('hidden');
-            msg.style.display = 'none';
+            desbloquear();
         });
 
-        document.getElementById('btnTelegram').addEventListener('click', function() {
-            window.dataLayer.push({ event: 'curso_aula_app_telegram' });
+        function desbloquear() {
+            if (desbloqueado) return;
+            desbloqueado = true;
+
+            barraFill.style.width = '100%';
+            btnApp.classList.remove('discreto');
+            btnApp.classList.add('ativo');
+            btnApp.textContent = 'Acessar o Aplicativo';
+            progressoLabel.textContent = 'Acesso liberado!';
+            progressoLabel.classList.add('concluido');
+
+            // Scroll suave até o botão
+            btnApp.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        btnApp.addEventListener('click', function(e) {
+            if (!desbloqueado) {
+                e.preventDefault();
+                video.scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+            window.dataLayer.push({ event: 'curso_aula_app_acesso_app' });
         });
     })();
     </script>
