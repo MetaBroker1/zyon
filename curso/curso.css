@@ -1,0 +1,253 @@
+/* ===================================
+   ZYON CAPITAL — Curso Básico
+   Design System: Dark + Verde (#00C853)
+   =================================== */
+
+:root {
+    --color-bg: #0a0a0a;
+    --color-surface: #1a1a1a;
+    --color-border: #2a2a2a;
+    --color-green: #00C853;
+    --color-green-dark: #00A844;
+    --color-white: #FFFFFF;
+    --color-gray: #9a9a9a;
+    --color-gray-light: #c4c4c4;
+    --color-telegram: #2AABEE;
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --radius: 12px;
+    --transition: 0.3s ease;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--color-bg);
+    color: var(--color-white);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- HEADER --- */
+.curso-header {
+    padding: 20px 24px;
+    text-align: center;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.logo {
+    height: 40px;
+    width: auto;
+}
+
+/* --- CONTAINER --- */
+.curso-container {
+    flex: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 32px 20px 48px;
+    width: 100%;
+}
+
+/* --- PROGRESS --- */
+.curso-progress {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 32px;
+}
+
+.step {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--color-gray);
+    transition: var(--transition);
+}
+
+.step.active {
+    background: var(--color-green);
+    border-color: var(--color-green);
+    color: var(--color-white);
+}
+
+.step.done {
+    background: var(--color-green-dark);
+    border-color: var(--color-green-dark);
+    color: var(--color-white);
+    font-size: 16px;
+}
+
+.step-line {
+    width: 60px;
+    height: 2px;
+    background: var(--color-border);
+}
+
+.step-line.done {
+    background: var(--color-green-dark);
+}
+
+/* --- TÍTULO --- */
+.curso-titulo {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.curso-subtitulo {
+    color: var(--color-gray);
+    font-size: 15px;
+    margin-bottom: 28px;
+}
+
+/* --- VÍDEO --- */
+.video-wrapper {
+    width: 100%;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--color-surface);
+    margin-bottom: 24px;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* --- BOTÃO --- */
+.btn-container {
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 24px;
+    transition: opacity var(--transition);
+}
+
+.btn-container.hidden {
+    display: none;
+}
+
+.btn-proximo {
+    display: inline-block;
+    padding: 16px 40px;
+    background: var(--color-green);
+    color: var(--color-white);
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-proximo:hover {
+    background: var(--color-green-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 200, 83, 0.3);
+}
+
+.btn-telegram {
+    background: var(--color-telegram);
+}
+
+.btn-telegram:hover {
+    background: #1A8FCC;
+    box-shadow: 0 8px 24px rgba(42, 171, 238, 0.3);
+}
+
+/* --- MENSAGEM --- */
+.msg-assistir {
+    text-align: center;
+    color: var(--color-gray);
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* --- CONCLUSÃO --- */
+.conclusao {
+    margin-top: 24px;
+    transition: opacity var(--transition);
+}
+
+.conclusao.hidden {
+    display: none;
+}
+
+.conclusao-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-green);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+}
+
+.conclusao-card h2 {
+    font-size: 20px;
+    color: var(--color-green);
+    margin-bottom: 8px;
+}
+
+.conclusao-card p {
+    color: var(--color-gray-light);
+    font-size: 15px;
+}
+
+/* --- FOOTER --- */
+.curso-footer {
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+}
+
+.curso-footer p {
+    color: var(--color-gray);
+    font-size: 13px;
+}
+
+.curso-footer a {
+    color: var(--color-gray);
+    text-decoration: none;
+}
+
+.curso-footer a:hover {
+    color: var(--color-white);
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 480px) {
+    .curso-container {
+        padding: 24px 16px 40px;
+    }
+
+    .curso-titulo {
+        font-size: 19px;
+    }
+
+    .btn-proximo {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
