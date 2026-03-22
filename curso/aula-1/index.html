@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 1 — Criando Conta e Primeiros Passos | Zyon Capital</title>
+    <title>Passo 1 — Criando Conta e Primeiros Passos | Zyon Capital</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" href="../../images/logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,14 +28,20 @@
     </header>
 
     <main class="curso-container">
+        <div class="curso-bonus-aviso">
+            Complete os 3 passos e ganhe um <span class="bonus-destaque">bônus exclusivo</span> para começar a operar
+        </div>
+
         <div class="curso-progress">
             <div class="step active">1</div>
             <div class="step-line"></div>
             <div class="step">2</div>
+            <div class="step-line"></div>
+            <div class="step">3</div>
         </div>
 
-        <h1 class="curso-titulo">Aula 1 — Criando Conta, Interface e o que são Opções Binárias</h1>
-        <p class="curso-subtitulo">Assista a aula completa antes de avançar para o próximo passo.</p>
+        <h1 class="curso-titulo">Passo 1 — Criando Conta, Interface e o que são Opções Binárias</h1>
+        <p class="curso-subtitulo">Assista a aula completa para avançar ao próximo passo.</p>
 
         <div class="video-wrapper">
             <video id="videoAula" controls playsinline preload="auto"
@@ -47,11 +53,11 @@
 
         <div id="btnContainer" class="btn-container hidden">
             <a href="../aula-2/" class="btn-proximo" id="btnProximo">
-                Ir para a Aula 2 →
+                Ir para o Passo 2 →
             </a>
         </div>
 
-        <p id="msgAssista" class="msg-assistir">Assista a aula para desbloquear a próxima etapa.</p>
+        <p id="msgAssista" class="msg-assistir">Assista a aula para desbloquear o próximo passo.</p>
     </main>
 
     <footer class="curso-footer">
@@ -65,49 +71,30 @@
         var msg = document.getElementById('msgAssista');
         var tracked25 = false, tracked50 = false, tracked75 = false, trackedComplete = false;
 
-        // Evento: iniciou a aula
         video.addEventListener('play', function() {
             window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                event: 'curso_aula1_play',
-                aula: '1',
-                titulo: 'Criando Conta e Primeiros Passos'
-            });
+            window.dataLayer.push({ event: 'curso_aula1_play', aula: '1' });
         }, { once: true });
 
-        // Progresso do vídeo
         video.addEventListener('timeupdate', function() {
             if (!video.duration) return;
             var pct = (video.currentTime / video.duration) * 100;
-
-            if (pct >= 25 && !tracked25) {
-                tracked25 = true;
-                window.dataLayer.push({ event: 'curso_aula1_25pct' });
-            }
-            if (pct >= 50 && !tracked50) {
-                tracked50 = true;
-                window.dataLayer.push({ event: 'curso_aula1_50pct' });
-            }
+            if (pct >= 25 && !tracked25) { tracked25 = true; window.dataLayer.push({ event: 'curso_aula1_25pct' }); }
+            if (pct >= 50 && !tracked50) { tracked50 = true; window.dataLayer.push({ event: 'curso_aula1_50pct' }); }
             if (pct >= 75 && !tracked75) {
                 tracked75 = true;
                 window.dataLayer.push({ event: 'curso_aula1_75pct' });
-                // Liberar botão ao atingir 75%
                 btn.classList.remove('hidden');
                 msg.style.display = 'none';
             }
         });
 
-        // Evento: completou a aula
         video.addEventListener('ended', function() {
-            if (!trackedComplete) {
-                trackedComplete = true;
-                window.dataLayer.push({ event: 'curso_aula1_complete' });
-            }
+            if (!trackedComplete) { trackedComplete = true; window.dataLayer.push({ event: 'curso_aula1_complete' }); }
             btn.classList.remove('hidden');
             msg.style.display = 'none';
         });
 
-        // Evento: clicou para ir à aula 2
         document.getElementById('btnProximo').addEventListener('click', function() {
             window.dataLayer.push({ event: 'curso_aula1_proximo' });
         });

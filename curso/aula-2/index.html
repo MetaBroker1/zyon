@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 2 — Indicadores e Estratégia na Prática | Zyon Capital</title>
+    <title>Passo 2 — Indicadores e Estratégia na Prática | Zyon Capital</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="icon" href="../../images/logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,14 +28,20 @@
     </header>
 
     <main class="curso-container">
+        <div class="curso-bonus-aviso">
+            Falta pouco! Complete os 3 passos e ganhe seu <span class="bonus-destaque">bônus exclusivo</span>
+        </div>
+
         <div class="curso-progress">
             <div class="step done">✓</div>
             <div class="step-line done"></div>
             <div class="step active">2</div>
+            <div class="step-line"></div>
+            <div class="step">3</div>
         </div>
 
-        <h1 class="curso-titulo">Aula 2 — Configurando Indicadores e Estratégia na Prática</h1>
-        <p class="curso-subtitulo">Última etapa. Depois disso, você está pronto para operar.</p>
+        <h1 class="curso-titulo">Passo 2 — Configurando Indicadores e Estratégia na Prática</h1>
+        <p class="curso-subtitulo">Assista a aula completa para avançar ao último passo.</p>
 
         <div class="video-wrapper">
             <video id="videoAula" controls playsinline preload="auto"
@@ -46,19 +52,12 @@
         </div>
 
         <div id="btnContainer" class="btn-container hidden">
-            <a href="https://t.me/+fpu9RPK1HRk1Y2Vh" class="btn-proximo btn-telegram" id="btnTelegram">
-                Entrar no Canal do Bryan
+            <a href="../registro/" class="btn-proximo" id="btnProximo">
+                Ir para o Passo 3 →
             </a>
         </div>
 
-        <p id="msgAssista" class="msg-assistir">Assista a aula para desbloquear o próximo passo.</p>
-
-        <div id="conclusao" class="conclusao hidden">
-            <div class="conclusao-card">
-                <h2>Curso concluído!</h2>
-                <p>Agora você sabe o essencial. O próximo passo é entrar no canal e acompanhar o Bryan operando ao vivo.</p>
-            </div>
-        </div>
+        <p id="msgAssista" class="msg-assistir">Assista a aula para desbloquear o último passo.</p>
     </main>
 
     <footer class="curso-footer">
@@ -70,30 +69,18 @@
         var video = document.getElementById('videoAula');
         var btn = document.getElementById('btnContainer');
         var msg = document.getElementById('msgAssista');
-        var conclusao = document.getElementById('conclusao');
         var tracked25 = false, tracked50 = false, tracked75 = false, trackedComplete = false;
 
         video.addEventListener('play', function() {
             window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                event: 'curso_aula2_play',
-                aula: '2',
-                titulo: 'Indicadores e Estratégia na Prática'
-            });
+            window.dataLayer.push({ event: 'curso_aula2_play', aula: '2' });
         }, { once: true });
 
         video.addEventListener('timeupdate', function() {
             if (!video.duration) return;
             var pct = (video.currentTime / video.duration) * 100;
-
-            if (pct >= 25 && !tracked25) {
-                tracked25 = true;
-                window.dataLayer.push({ event: 'curso_aula2_25pct' });
-            }
-            if (pct >= 50 && !tracked50) {
-                tracked50 = true;
-                window.dataLayer.push({ event: 'curso_aula2_50pct' });
-            }
+            if (pct >= 25 && !tracked25) { tracked25 = true; window.dataLayer.push({ event: 'curso_aula2_25pct' }); }
+            if (pct >= 50 && !tracked50) { tracked50 = true; window.dataLayer.push({ event: 'curso_aula2_50pct' }); }
             if (pct >= 75 && !tracked75) {
                 tracked75 = true;
                 window.dataLayer.push({ event: 'curso_aula2_75pct' });
@@ -103,17 +90,13 @@
         });
 
         video.addEventListener('ended', function() {
-            if (!trackedComplete) {
-                trackedComplete = true;
-                window.dataLayer.push({ event: 'curso_aula2_complete' });
-            }
+            if (!trackedComplete) { trackedComplete = true; window.dataLayer.push({ event: 'curso_aula2_complete' }); }
             btn.classList.remove('hidden');
             msg.style.display = 'none';
-            conclusao.classList.remove('hidden');
         });
 
-        document.getElementById('btnTelegram').addEventListener('click', function() {
-            window.dataLayer.push({ event: 'curso_concluido_telegram' });
+        document.getElementById('btnProximo').addEventListener('click', function() {
+            window.dataLayer.push({ event: 'curso_aula2_proximo' });
         });
     })();
     </script>
