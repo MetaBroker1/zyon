@@ -52,6 +52,15 @@
             border-radius: var(--radius);
             margin: 20px 0;
             letter-spacing: -0.5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .bonus-badge:hover {
+            background: var(--color-green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 200, 83, 0.4);
         }
 
         .bonus-desc {
@@ -194,7 +203,7 @@
             <h2>Você completou as 2 aulas!</h2>
             <p>Agora é hora de colocar em prática. Registre-se na corretora para começar a operar com o Bryan.</p>
 
-            <a href="https://lxgo.me/go?brand=metabroker&bta=30005&nci=2" class="bonus-badge" id="btnBonusBadge" style="text-decoration:none;display:inline-block;">Bônus de 100%</a>
+            <a href="https://lxgo.me/go?brand=metabroker&bta=30005&nci=2" target="_blank" rel="noopener" class="bonus-badge" id="btnBonusBadge">Bônus de 100%</a>
 
             <p class="bonus-desc">Deposite qualquer valor e a corretora dobra</p>
             <p class="bonus-exemplo">Exemplo: deposite R$ 200 e opere com R$ 400</p>
