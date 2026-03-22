@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 2 — Indicadores e Estratégia na Prática | Zyon Capital</title>
+    <title>Aula 1 — Criando Conta e Primeiros Passos | Zyon Capital</title>
     <meta name="robots" content="noindex, nofollow">
-    <link rel="icon" href="../images/logo.png" type="image/png">
+    <link rel="icon" href="../../images/logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="curso.css">
+    <link rel="stylesheet" href="../curso.css">
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -24,45 +24,38 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <header class="curso-header">
-        <img src="../images/logo.png" alt="Zyon Capital" class="logo">
+        <img src="../../images/logo.png" alt="Zyon Capital" class="logo">
     </header>
 
     <main class="curso-container">
         <div class="curso-progress">
-            <div class="step done">✓</div>
-            <div class="step-line done"></div>
-            <div class="step active">2</div>
+            <div class="step active">1</div>
+            <div class="step-line"></div>
+            <div class="step">2</div>
         </div>
 
-        <h1 class="curso-titulo">Aula 2 — Configurando Indicadores e Estratégia na Prática</h1>
-        <p class="curso-subtitulo">Última etapa. Depois disso, você está pronto para operar.</p>
+        <h1 class="curso-titulo">Aula 1 — Criando Conta, Interface e o que são Opções Binárias</h1>
+        <p class="curso-subtitulo">Assista a aula completa antes de avançar para o próximo passo.</p>
 
         <div class="video-wrapper">
             <video id="videoAula" controls playsinline preload="metadata"
-                   poster="../images/logo.png">
-                <source src="aula-2-indicadores-estrategia.mp4" type="video/mp4">
+                   poster="../../images/logo.png">
+                <source src="../aula-1-criando-conta.mp4" type="video/mp4">
                 Seu navegador não suporta vídeo.
             </video>
         </div>
 
         <div id="btnContainer" class="btn-container hidden">
-            <a href="https://t.me/+fpu9RPK1HRk1Y2Vh" class="btn-proximo btn-telegram" id="btnTelegram">
-                Entrar no Canal do Bryan
+            <a href="../aula-2/" class="btn-proximo" id="btnProximo">
+                Ir para a Aula 2 →
             </a>
         </div>
 
-        <p id="msgAssista" class="msg-assistir">Assista a aula para desbloquear o próximo passo.</p>
-
-        <div id="conclusao" class="conclusao hidden">
-            <div class="conclusao-card">
-                <h2>Curso concluído!</h2>
-                <p>Agora você sabe o essencial. O próximo passo é entrar no canal e acompanhar o Bryan operando ao vivo.</p>
-            </div>
-        </div>
+        <p id="msgAssista" class="msg-assistir">Assista a aula para desbloquear a próxima etapa.</p>
     </main>
 
     <footer class="curso-footer">
-        <p>Desenvolvido por <a href="https://vanttmkt.com" target="_blank" rel="noopener">vanttmkt.com</a></p>
+        <p>Zyon Capital</p>
     </footer>
 
     <script>
@@ -70,50 +63,53 @@
         var video = document.getElementById('videoAula');
         var btn = document.getElementById('btnContainer');
         var msg = document.getElementById('msgAssista');
-        var conclusao = document.getElementById('conclusao');
         var tracked25 = false, tracked50 = false, tracked75 = false, trackedComplete = false;
 
+        // Evento: iniciou a aula
         video.addEventListener('play', function() {
             window.dataLayer = window.dataLayer || [];
             window.dataLayer.push({
-                event: 'curso_aula2_play',
-                aula: '2',
-                titulo: 'Indicadores e Estratégia na Prática'
+                event: 'curso_aula1_play',
+                aula: '1',
+                titulo: 'Criando Conta e Primeiros Passos'
             });
         }, { once: true });
 
+        // Progresso do vídeo
         video.addEventListener('timeupdate', function() {
             if (!video.duration) return;
             var pct = (video.currentTime / video.duration) * 100;
 
             if (pct >= 25 && !tracked25) {
                 tracked25 = true;
-                window.dataLayer.push({ event: 'curso_aula2_25pct' });
+                window.dataLayer.push({ event: 'curso_aula1_25pct' });
             }
             if (pct >= 50 && !tracked50) {
                 tracked50 = true;
-                window.dataLayer.push({ event: 'curso_aula2_50pct' });
+                window.dataLayer.push({ event: 'curso_aula1_50pct' });
             }
             if (pct >= 75 && !tracked75) {
                 tracked75 = true;
-                window.dataLayer.push({ event: 'curso_aula2_75pct' });
+                window.dataLayer.push({ event: 'curso_aula1_75pct' });
+                // Liberar botão ao atingir 75%
                 btn.classList.remove('hidden');
                 msg.style.display = 'none';
             }
         });
 
+        // Evento: completou a aula
         video.addEventListener('ended', function() {
             if (!trackedComplete) {
                 trackedComplete = true;
-                window.dataLayer.push({ event: 'curso_aula2_complete' });
+                window.dataLayer.push({ event: 'curso_aula1_complete' });
             }
             btn.classList.remove('hidden');
             msg.style.display = 'none';
-            conclusao.classList.remove('hidden');
         });
 
-        document.getElementById('btnTelegram').addEventListener('click', function() {
-            window.dataLayer.push({ event: 'curso_concluido_telegram' });
+        // Evento: clicou para ir à aula 2
+        document.getElementById('btnProximo').addEventListener('click', function() {
+            window.dataLayer.push({ event: 'curso_aula1_proximo' });
         });
     })();
     </script>
